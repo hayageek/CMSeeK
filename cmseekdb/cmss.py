@@ -17,7 +17,7 @@ wp = {
     'name':'WordPress',
     'url':'https://wordpress.org',
     'vd':'1',
-    'deeps':'1'
+    'deeps':'0'
 }
 
 mg = {
@@ -157,7 +157,7 @@ joom = {
     'name':'Joomla',
     'url':'https://joomla.org',
     'vd':'1',
-    'deeps':'1'
+    'deeps':'0'
 }
 oc = {
     'name':'OpenCart',
@@ -1058,7 +1058,7 @@ umbraco = {
     'name':'Umbraco',
     'url':'https://umbraco.com',
     'vd':'1',
-    'deeps':'1'
+    'deeps':'0'
 }
 
 shoper = {
