@@ -414,7 +414,7 @@ def update():
                         statement("Removing index.lock file from .git directory")
                         # Solve the index.lock issue
                         os.remove(lock_file)
-                    subprocess.run(("git checkout . && git pull %s HEAD") % GIT_URL, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                    subprocess.run(("git checkout . && git pull %s HEAD") % GIT_URL, shell=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                     #os.system("git checkout . && git pull %s HEAD" % GIT_URL)
                     with open('current_version', 'r') as vt:
                         v_test = int(vt.read().replace('\n','').replace('.',''))
