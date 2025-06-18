@@ -7,7 +7,6 @@
 import errno
 import sys
 import os
-import random
 import shutil
 import signal
 import subprocess
@@ -19,6 +18,7 @@ import time
 import re
 from cmseekdb.getsource import *
 from cmseekdb.config import *
+import secrets
 
 cmseek_dir = os.path.dirname(os.path.abspath(__file__)).replace('cmseekdb','')[:-1]    
 total_requests = 0
@@ -172,7 +172,7 @@ def clearscreen():
 
 def bye():
     bye_dict = ["adios","adieu","addio","adeus","aloha","arrivederci","auf Wiedersehen","au revoir","sayonara","shalom","totsiens","vale","zaijian","Aabar dekha hobey","Fir milenge","Annyeong", "Ja mata ne", "До Встречи"]
-    this_time = random.choice(bye_dict)
+    this_time = secrets.choice(bye_dict)
     print('\n' + bold + red + ' CMSeeK says ~ ' + this_time + cln)
     quit()
 
@@ -545,10 +545,10 @@ def randomua(rnd = None): # Randomized or User defined useragent
     if rnd == None:
         b = input("Enter custom UserAgent or simply press enter to use a random one: ")
         if b == "":
-            b = random.choice(a)
+            b = secrets.choice(a)
         else:
             pass
     else:
-        b = random.choice(a)
+        b = secrets.choice(a)
 
     return b
